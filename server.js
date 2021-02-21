@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.get('/',(req,res)=>{
+app.get('/hi',(req,res)=>{
     res.json({"message" : "API listening"});
 });
 
