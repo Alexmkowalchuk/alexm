@@ -32,14 +32,14 @@ app.post('/api/restaurants/:data',(req,res)=>{
 });
 
 app.get('/api/restaurants',(req,res)=>{
-    db.getAllRestaurants(req.query.page,req.query.perPage).then((results)=>{
+    db.getAllRestaurants(req.query.page,req.query.perPage,req.query.borough).then((results)=>{
         res.json(results);
     }).catch((results)=>{
         res.status(404).json({"message" : results.message});
     })
 });
 
-app.get('/api/restaurants/:id',(req,res)=>{
+app.get('/api/restaurant/:id',(req,res)=>{
     db.getRestaurantById(req.params.id).then((result)=>{
         res.json(result);
     }).catch(()=>{
